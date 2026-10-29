@@ -7,6 +7,7 @@ A Chrome Manifest V3 extension that scans web pages in real-time for phishing in
 - **On-Page Highlights:** Highlights suspicious links directly on the webpage in red.
 - **Toolbar Threat Counter Badge:** Updates extension icon badge text with the active threat count.
 - **Export Threat Log:** Downloads detected threats as a structured `.json` log file.
+- **Advanced Detection Logic:** Features advanced detection logic to detect clickjacking, open redirects, subdomain depth, domain mismatch, unsandboxed iframes, no trusted domain whitelist
 
 ## Team Members (Group 13 - ROSPL)
 - **Vinit Yadav** (`vinity7`) - Lead Developer & Repository Owner
