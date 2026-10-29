@@ -3,21 +3,120 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { width: 300px; font-family: Arial, sans-serif; padding: 14px; margin: 0; background-color: #f9fafb; }
-    h3 { margin: 0 0 10px 0; font-size: 15px; color: #111827; text-align: center; }
-    .status-box { background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 10px; border-radius: 6px; font-weight: bold; font-size: 13px; text-align: center; margin-bottom: 12px; }
-    button { width: 100%; padding: 10px; margin-bottom: 8px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
-    #scanBtn { background: #2563eb; color: white; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 360px;
+      max-height: 560px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f9fafb;
+      padding: 14px;
+      overflow-y: auto;
+    }
+
+    h3 {
+      font-size: 15px;
+      color: #111827;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .status-box {
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      color: #0369a1;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+    .badge-high { background: #dc2626; color: white; }
+    .badge-med  { background: #d97706; color: white; }
+
+    .btn-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 9px;
+      border: none;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    button:active { transform: scale(0.97); }
+
+    #scanBtn   { background: #2563eb; color: white; }
     #scanBtn:hover { background: #1d4ed8; }
     #exportBtn { background: #059669; color: white; }
     #exportBtn:hover { background: #047857; }
+
+    /* Threat cards */
+    #threatList { display: flex; flex-direction: column; gap: 8px; }
+
+    .threat-card {
+      border-radius: 7px;
+      padding: 9px 11px;
+      font-size: 12px;
+      border-left: 4px solid;
+    }
+    .threat-high {
+      background: #fef2f2;
+      border-color: #dc2626;
+    }
+    .threat-med {
+      background: #fffbeb;
+      border-color: #d97706;
+    }
+
+    .threat-type {
+      font-weight: 700;
+      font-size: 12px;
+      color: #111827;
+      margin-bottom: 3px;
+    }
+    .threat-url {
+      font-size: 11px;
+      color: #6b7280;
+      word-break: break-all;
+      margin-bottom: 5px;
+      font-family: monospace;
+    }
+    .threat-reasons {
+      padding-left: 14px;
+      color: #374151;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .threat-reasons li { margin-bottom: 2px; }
   </style>
 </head>
 <body>
-  <h3>🛡️ AI Phishing Detector</h3>
+  <h3>🛡️ Phishing Detector</h3>
   <div id="status" class="status-box">Ready to scan current page</div>
-  <button id="scanBtn">Scan Webpage</button>
-  <button id="exportBtn">Export Threat Log</button>
+  <div class="btn-row">
+    <button id="scanBtn">🔍 Scan Page</button>
+    <button id="exportBtn">📥 Export Log</button>
+  </div>
+  <div id="threatList"></div>
 
   <script src="popup.js"></script>
 </body>

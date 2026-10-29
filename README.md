@@ -1,6 +1,7 @@
-# AI Phishing & Malicious Link Warning System
+# Phishing & Malicious Link Warning System
 
-A Chrome Manifest V3 extension that scans web pages in real-time for phishing indicators, raw IP-hosted links, deceptive subdomains, and credential-harvesting elements.
+A Chrome Manifest V3 extension that scans web pages in real-time for phishing indicators, open redirects, brand impersonation, clickjacking attempts, deceptive subdomains, and credential-harvesting elements.
+
 
 ## Features
 - **Real-Time Link Scanner:** Parses DOM `<a>` tags and identifies unsafe URLs.

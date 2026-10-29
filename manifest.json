@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "AI Phishing & Malicious Link Warning System",
+  "name": "Phishing & Malicious Link Warning System",
   "version": "1.0",
-  "description": "Scans web pages for raw IP links, fake domain spoofs, and deceptive subdomains.",
-  "permissions": ["activeTab", "scripting", "downloads", "storage"],
+  "description": "Scans web pages for phishing indicators: open redirects, brand impersonation, clickjacking, deceptive subdomains, and suspicious link patterns.",
+  "permissions": ["activeTab", "scripting", "downloads", "storage", "webNavigation"],
   "action": {
     "default_popup": "popup.html"
   },
